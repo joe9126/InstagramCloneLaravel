@@ -12,7 +12,7 @@
             <img src="/assets/svg/instagram-logo.svg" alt="profile_img" class=" rounded-circle">
         </div>
         <div class="col-sm-9 p-5">
-           <div><h1 class="text-2xl"><strong>Prime Coder</strong></h1></div>
+           <div><h1 class="text-2xl"><strong>{{Auth::user()->username}}</strong></h1></div>
            <div class="d-flex pb-5">
                 <div class="pr-5"><strong>153K </strong>posts </div>
                 <div class="pr-5"><strong>23.5k </strong> followers </div>
