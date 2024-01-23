@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
+        @vite(['resources/css/app.css','resources/css/styles.css', 'resources/js/app.js', 'resources/sass/app.scss'])
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -30,7 +30,7 @@
             <!-- Page Content -->
             <main>
                 <div class="row d-flex justify-content-center pt-3">
-                    <div class="col-sm-9 ">
+                    <div class="col-sm-6 ">
                         {{ $slot }}
                     </div>
                 </div>
