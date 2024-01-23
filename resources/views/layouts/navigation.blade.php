@@ -7,7 +7,12 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <!--<x-application-logo class="block h-9 w-auto fill-current text-gray-800" />-->
-                        <img src="/assets/svg/instagram-1.svg" alt="applogo" class="block h-9 w-auto fill-current text-gray-800">
+                        <div class="flex">
+                            <img src="/assets/svg/instagram-logo.svg" alt="applog" class="block h-7 w-auto fill-current text-gray-600 pr-3" style="border-right:1px solid #333"> 
+                           
+                            <img src="/assets/svg/instagram-1.svg" alt="appname" class="block h-8 w-auto fill-current text-gray-800 pl-3">
+                        </div>
+                       
                     </a>
                 </div>
 
