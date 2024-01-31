@@ -8,15 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile .
      */
-    public function index(Request $request): View{
+    public function index($user){
+       $user  = User::findOrFail($user);
         return view('home', [
-                'user'=>$request->user(),
+                'user'=>$user,
         ]
     );
     }

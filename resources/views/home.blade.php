@@ -15,16 +15,16 @@
                             <img src="/assets/svg/instagram-logo.svg" alt="profile_img" class=" rounded-circle">
                         </div>
                         <div class="col-sm-9 p-5">
-                           <div><h1 class="text-2xl"><strong>{{Auth::user()->name}}</strong></h1></div>
+                           <div><h1 class="text-2xl"><strong>{{$user->name}}</strong></h1></div>
                            <div class="d-flex pb-5">
                                 <div class="pr-5"><strong>153K </strong>posts </div>
                                 <div class="pr-5"><strong>23.5k </strong> followers </div>
                                 <div class="pr-5"><strong>257</strong> following </div>
                            </div>
                            <div>
-                                <h5><strong>{{Auth::user()->username}}</strong></h5>
-                                <small>I'm a skilled software developer with backend and front-end skills. Let's connect and do amazinf stuffs. </small>
-                                <div><a href="#">www.primecoder.org</a></div>
+                                <h5><strong>{{$user->profile->title}}</strong></h5>
+                                <small>{{$user->profile->description}} </small>
+                                <div><a href="#">{{$user->profile->url}}</a></div>
                            </div>
                         </div>
                     </div>
