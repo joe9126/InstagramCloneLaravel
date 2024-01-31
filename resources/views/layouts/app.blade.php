@@ -30,8 +30,9 @@
             <!-- Page Content -->
             <main>
                 <div class="row d-flex justify-content-center pt-3">
-                    <div class="col-sm-6 ">
-                        {{ $slot }}
+                    <div class="col-sm-8 ">
+                       
+                      @yield('content')
                     </div>
                 </div>
                
