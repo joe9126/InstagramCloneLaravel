@@ -21,7 +21,12 @@
                          <!-- Image -->
                          <div class="mt-4">
                             <x-input-label for="image" :value="__('Image')" />
-                            <x-text-input id="image" class="block mt-1 w-full form-control-file"  type="file" name="image" :value="old('image')"  autofocus autocomplete="image" />
+                            <input id="image" class="block mt-1 w-full form-control-file"  
+                                type="file" 
+                                name="image" :value="old('image')"  
+                                autofocus autocomplete="image"
+                                accept = "image/png, image/jpeg, image/gif"
+                             />
                             <x-input-error :messages="$errors->get('image')" class="mt-2" />
                         </div>
                     
