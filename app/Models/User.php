@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -45,9 +46,18 @@ class User extends Authenticatable
     ];
 
     /**
-     * One to one relationship
+     * One to one relationship with profile
      */
-    public function profile(){
+    public function profile()
+    {
         return $this->hasOne(Profile::class);
+    }
+
+    /**
+     * One to Many relationship with post
+     */
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
     }
 }
