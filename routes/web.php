@@ -18,14 +18,14 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile/{user}',[ProfileController::class,'index'])->name('profile.show');
+   
     Route::get('/prof/{user}/edit', [ProfileController::class,'profedit'])->name('prof.edit');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::post('p',[PostsController::class, 'store'])->name('post.store');
     Route::get('/p/{id}',[PostsController::class, 'show'])->name('post.show');
 });
+Route::get('/profile/{user}',[ProfileController::class,'index'])->name('profile.show');
 
 require __DIR__.'/auth.php';
 
