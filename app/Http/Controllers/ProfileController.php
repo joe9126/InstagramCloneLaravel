@@ -25,6 +25,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request):View
     {
+        $this->authorize('update',$user->profile);
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
@@ -32,7 +33,7 @@ class ProfileController extends Controller
 
     public function profedit(User $user)
     {
-       // dd($user);
+        $this->authorize('update',$user->profile);
         return view('profile.edit', compact('user') );
     }
 
@@ -42,11 +43,8 @@ class ProfileController extends Controller
      */
     public function update(User $user): RedirectResponse
     {
-       // $request->user()->fill($request->validated());
-
-       /* if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }*/
+        $this->authorize('update',$user->profile);
+        
         $data = request()->validate(
             [
                 'title'=>['required'],
@@ -55,7 +53,7 @@ class ProfileController extends Controller
                 'image'=>['']
             ]);
           
-       $user->profile->update($data);
+       auth()->user()->profile->update($data);
 
       return Redirect::route('profile.show',$user->id)->with('status', 'profile-updated');
     }

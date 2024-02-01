@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
    
-    Route::get('/prof/{user}/edit', [ProfileController::class,'profedit'])->name('prof.edit');
+    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/p/{id}',[PostsController::class, 'show'])->name('post.show');
 });
 Route::get('/profile/{user}',[ProfileController::class,'index'])->name('profile.show');
+Route::get('/prof/{user}/edit', [ProfileController::class,'profedit'])->name('prof.edit');
 
 require __DIR__.'/auth.php';
 

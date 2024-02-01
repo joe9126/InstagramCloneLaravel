@@ -17,9 +17,14 @@
                         <div class="col-sm-9 p-5">
                            <div class="d-flex justify-content-between align-items-baseline">
                                 <h1 class="text-2xl"><strong>{{$user->username}}</strong></h1>
-                                <a href="/p/create">Add New Post</a>
+                                
+                                @can('update',$user->profile)
+                                 <a href="/p/create">Add New Post</a>
+                                 @endcan
                             </div>
-                            <a href="/prof/{{$user->id}}/edit">Edit Profile</a>
+                            @can('update',$user->profile)
+                               <a href="/prof/{{$user->id}}/edit">Edit Profile</a>
+                            @endcan
                             
                            <div class="d-flex pb-5">
                                 <div class="pr-5"><strong>{{$user->posts->count()}} </strong>posts </div>
