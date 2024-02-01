@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,6 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::get('/home', [HomeController::class, 'index'])->name('index');
 
 
