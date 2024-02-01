@@ -55,7 +55,7 @@ class ProfileController extends Controller
                 'image'=>['']
             ]);
           
-        $user->profile->update($data);
+       auth()->$user->profile->update($data);
 
       return Redirect::route('profile.show',$user->id)->with('status', 'profile-updated');
     }

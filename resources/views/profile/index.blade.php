@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-sm-9 p-5">
                            <div class="d-flex justify-content-between align-items-baseline">
-                                <h1 class="text-2xl"><strong>{{$user->name}}</strong></h1>
+                                <h1 class="text-2xl"><strong>{{$user->username}}</strong></h1>
                                 <a href="/p/create">Add New Post</a>
                             </div>
                             <a href="/prof/{{$user->id}}/edit">Edit Profile</a>
