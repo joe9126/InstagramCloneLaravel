@@ -15,23 +15,27 @@ class ProfileController extends Controller
     /**
      * Display the user's profile .
      */
-    public function index($user){
-       $user  = User::findOrFail($user);
-       //$posts =  User
-        return view('profile.index', [
-                'user'=>$user,
-        ]
-    );
+    public function index(User $user){
+      // $user  = User::findOrFail($user);
+    
+        return view('profile.index', compact('user') );
     }
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    public function edit(Request $request):View
     {
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
+
+    public function profedit(User $user)
+    {
+       // dd($user);
+        return view('profile.edit', compact('user') );
+    }
+
 
     /**
      * Update the user's profile information.
