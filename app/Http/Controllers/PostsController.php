@@ -46,4 +46,11 @@ class PostsController extends Controller
 
         return redirect('/profile/'.auth()->user()->id);
       }
+
+      public function show($post)
+      {
+        $post = Post::findOrFail($post);
+     
+        return view('posts.show',compact('post')); 
+      }
 }
