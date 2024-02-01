@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/prof/{user}/edit', [ProfileController::class,'profedit'])->name('prof.edit');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     /**
